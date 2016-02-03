@@ -46,11 +46,15 @@ public class LoginServlet extends HttpServlet {
             error = "其他错误：" + e.getMessage();
         }
 
-        if(error != null) {//出错了，返回登录页面
-            req.setAttribute("error", error);
-            req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
-        } else {//登录成功
-            req.getRequestDispatcher("/WEB-INF/jsp/loginSuccess.jsp").forward(req, resp);
-        }
+        
+        if(error != null) {//出错了，返回登录页面  
+            req.setAttribute("error", error);  
+            req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);  
+        } else {//登录成功  
+        	req.setAttribute("subject",subject);
+            req.getRequestDispatcher("/WEB-INF/jsp/loginSuccess.jsp").forward(req, resp);  
+        }  
+
+        
     }
 }

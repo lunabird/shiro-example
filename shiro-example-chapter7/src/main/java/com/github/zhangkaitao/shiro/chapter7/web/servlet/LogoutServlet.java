@@ -24,7 +24,8 @@ public class LogoutServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        SecurityUtils.getSubject().logout();
+    	req.setAttribute("subject",SecurityUtils.getSubject());
+    	SecurityUtils.getSubject().logout();
         req.getRequestDispatcher("/WEB-INF/jsp/logoutSuccess.jsp").forward(req, resp);
     }
 

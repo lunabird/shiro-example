@@ -109,7 +109,7 @@ public class LoginLogoutTest {
         subject.logout();
     }
 
-
+/*
     @Test
     public void testJDBCRealm() {
         //1、获取SecurityManager工厂，此处使用Ini配置文件初始化SecurityManager
@@ -138,7 +138,7 @@ public class LoginLogoutTest {
         subject.logout();
     }
 
-
+*/
     @After
     public void tearDown() throws Exception {
         ThreadContext.unbindSubject();//退出时请解除绑定Subject到线程 否则对下次测试造成影响
